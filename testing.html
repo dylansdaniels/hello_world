@@ -6,10 +6,6 @@
     <style>.emoji {
   max-width: 1em !important;
 }
-#wrapper {
-  margin:0 auto; 
-  width:900px;
-}
 del {
   text-decoration: none;
   position: relative;
@@ -653,18 +649,22 @@ pre.editor-colors .fold-marker:after {
  * Examples
  * (To see them, uncomment and save)
  */
+html[data-markdown-preview-plus-context="html-export"] #wrapper {
+  margin: 0 auto;
+  width: 900px;
+}
 </style>
 
   </head>
   <body>
     <div id="wrapper">
-    <h1>Alpha (7-14 Hz) and Beta (15-29 Hz) Rhythms: The Mu-Complex</h1>
+<h1>Alpha (7-14 Hz) and Beta (15-29 Hz) Rhythms: The Mu-Complex</h1>
 <h2>Getting Started</h2>
 <p>In order to understand the workflow and initial parameter sets provided with this tutorial, we must first briefly describe prior studies that led to the creation of the data you will aim to simulate. This tutorial is based on results from Jones et al. 2009 where, using MEG, we recorded spontaneous (pre-stimulus) alpha (7-14 Hz) and beta (15-20 Hz) rhythms that arise as part of the mu-complex from the primary somatosensory cortex (S1) [1]. (Figure 1. See also [2-4].)</p>
 <!-- start Figure 1 -->
 <div style="background-color:rgba(0, 0, 0, 0.025); text-align:center; vertical-align: middle; padding:15px; margin-top:20px; margin-bottom:20px">
 <p><strong>Figure 1</strong></p>
-<p align="center"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png" alt="image3" width="90%/"></p>
+<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png" alt="image3" width="90%/"></a></p>
 <p><strong>Left:</strong> Spectrogram of spontaneous activity from current dipole source in SI averaged across 100 trials, from an example subject, shows nearly continuous prestimulus alpha and beta oscillations. At time zero, a brief tap was given to the contralateral finger tip and the spontaneous oscillations briefly desynchronized.</p>
 <p><strong>Right:</strong> A closer look at the prestimulus waveform and spectrogram from spontaneous activity during example signal trials, shows that the alpha and beta oscillations occur intermittently and primarily non-overlapping.</p>
 </div>
@@ -673,12 +673,12 @@ pre.editor-colors .fold-marker:after {
 <!-- start Figure 2 -->
 <div style="background-color:rgba(0, 0, 0, 0.025); text-align:center; vertical-align: middle; padding:15px; margin-top:20px; margin-bottom:20px">
 <p><strong>Figure 2</strong></p>
-<p align="center"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image29.png" alt="image29" width="90%/"></p>
+<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image29.png" alt="image29" width="90%/"></a></p>
 <p>Key features of the spontaneous non-average SI alpha/beta complex include, intermittent transient bouts of alpha/beta activity, a waveform that oscillates around 0nAm, PSD with peaks in the alpha and beta bands, primarily non-overlapping alpha and beta events, and a symmetric waveform oscillation. The model was able to reproduce each of these features.</p>
 </div>
 <!-- end Figure 2 -->
 <!-- start Figure 3 -->
-<div markdown="1" style="background-color:rgba(0, 0, 0, 0.025); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:20px">
+<div style="background-color:rgba(0, 0, 0, 0.025); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:20px">
 <br><strong> Figure 3 </strong><table class="gist_table" style="border-collapse: collapse; border: none;">
 <tbody><tr style="border: none;">
 
@@ -686,7 +686,9 @@ pre.editor-colors .fold-marker:after {
 <tr style="border: none;">
 <td style="border: none;" width="5%">
 </td><td style="border: none;" width="35%">
-<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image4.png" width="100%/">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image4.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image4.png" alt="image4" width="100%/">
+</a>
 <p>  </p>
 </td>
 <td style="border: none; vertical-align: top;" width="55%">
@@ -696,15 +698,10 @@ pre.editor-colors .fold-marker:after {
 </tbody></table>
 </div>
 <!-- end Figure 3 -->
-<!-- -->
-<!-- -->
-<!-- the above lines are fixed -->
-<!-- -->
-<!-- -->
-<p>We found that a sequence of exogenous subthreshold excitatory synaptic drive could activate the network in a manner that reproduced important features of the SI rhythms in the model (Figure 2). This drive consisted of two nearly-synchronous 10 Hz rhythmic drives that contacted the network through proximal and distal projection pathways (Figure 3). The drives were simulated as population “bursts” of action potentials that contacted the network every 100 ms with the mean delay between the proximal and distal burst of 0ms. Specifically, as shown schematically in Figure 3, the population bursts consisted of 10, 2-spike bursts, Gaussian distributed in time. We presumed that during such spontaneous activity, these drives may be provided by leminscial and non-lemniscal thalamic nuclei, which contact proximal and distal pyramidal neurons respectively, and are know to burst fire at &nbsp;~10 Hz frequencies in spontaneous states [5,6].</p>
-<p>We assumed that the macroscale rhythms generating the observed alpha and beta activity arose from subthreshold current flow in a large population of neurons, as opposed to being generated by local spiking interaction. As such, the effective strengths of the exogenous driving inputs were tuned so that the cells in the network remained subthreshold (all other parameters were tuned and fixed base on the morphology, physiology and connectivity within layered neocortical circuits, see Jones et al. 2009[1]for details). The inputs drove subthreshold currents up and down the pyramidal neurons to reproduce accurate waveform and spectrogram features (see Figure&nbsp;3). A scaling factor of 3000 was multiplied by the model waveform to reproduce nAm units comparable to the recorded data, suggesting on the order 200 x 3000 = 600,000 pyramidal neurons contributed to this signal.</p>
-<p>We further found that decreasing the delay between the drives to ~50 ms created a pure alpha oscillation, while with an ~0 ms delay beta events emerged and increasing the strength of the distal drive created a stronger beta activity (data not shown; see parameter exploration below). This result led to the novel prediction that brief beta events emerge from a broad proximal drive disrupted by a simultaneous strong distal drive that lasted 50 ms (i.e., one beta period). Support for this prediction was found invasively with laminar recordings in mice and monkeys [3].</p>
-<p>In this tutorial, we will explore parameter changes that illustrate these results. We will walk you step-by-step through simulations with various combinations of rhythmic proximal and distal drives to describe how each contributes to the alpha and beta components of the SI alpha/beta complex rhythm. We will begin by simulating only rhythmic proximal alpha frequency inputs (Step 1), followed by distal only alpha frequency inputs (Step 2), followed by various combinations of proximal and distal drive to generate alpha and beta rhythms. We’ll show you how HNN can plot waveforms, time-frequency spectrograms, and power spectral density plots of the simulated data, as well as for imported recorded data.</p>
+<p>We found that a sequence of exogenous subthreshold excitatory synaptic drive could activate the network in a manner that reproduced important features of the SI rhythms in the model (Figure 2). This drive consisted of two nearly-synchronous 10 Hz rhythmic drives that contacted the network through proximal and distal projection pathways (Figure 3). The drives were simulated as population “bursts” of action potentials that contacted the network every 100ms with the mean delay between the proximal and distal burst of 0ms. Specifically, as shown schematically in Figure 3, the population bursts consisted of 10, 2-spike bursts Gaussian distributed in time. We presumed that during such spontaneous activity, these drives may be provided by leminscial and non-lemniscal thalamic nuclei, which contact proximal and distal pyramidal neurons respectively, and they are know to burst fire at &nbsp;~10 Hz frequencies in spontaneous states [5,6].</p>
+<p>We assumed that the macroscale rhythms generating the observed alpha and beta activity arose from subthreshold current flow in a large population of neurons, as opposed to being generated by local spiking interaction. As such, the effective strengths of the exogenous driving inputs were tuned so that the cells in the network remained subthreshold (all other parameters were tuned and fixed base on the morphology, physiology and connectivity within layered neocortical circuits, see Jones et al. 2009 [1] for details). The inputs drove subthreshold currents up and down the pyramidal neurons to reproduce accurate waveform and spectrogram features (see Figure&nbsp;3). A scaling factor of 3000 was multiplied by the model waveform to reproduce nAm units comparable to the recorded data, suggesting on the order 200 x 3000 = 600,000 pyramidal neurons contributed to this signal.</p>
+<p>We further found that decreasing the delay between the drives to ~50ms created a pure alpha oscillation, while applying an ~0ms delay caused beta events to emerge and increased the strength of the distal drive, creating stronger beta activity (data not shown; see parameter exploration below). This result led to the novel prediction that brief beta events emerge from a broad proximal drive disrupted by a simultaneous strong distal drive that lasted 50ms (i.e., one beta period). Support for this prediction was found invasively with laminar recordings in mice and monkeys [3].</p>
+<p>In this tutorial, we will explore parameter changes that illustrate these results. We will walk you step-by-step through simulations with various combinations of rhythmic proximal and distal drives to describe how each contributes to the alpha and beta components of the SI alpha/beta complex rhythm. We will begin by simulating only rhythmic proximal alpha frequency inputs (Step 1), followed by simulating only distal alpha frequency inputs (Step 2), followed by various combinations of proximal and distal drive to generate alpha and beta rhythms. We’ll show you how HNN can plot waveforms, time-frequency spectrograms, and power spectral density plots of the simulated data, as well as for imported recorded data.</p>
 <h2>Tutorial Table of&nbsp;Contents</h2>
 <p>1. <a href="#toc_one">Simulating Rhythmic Proximal Inputs: Alpha only</a></p>
 <p>2. <a href="#toc_two">Simulation Rhythmic Distal Inputs: Alpha only</a></p>
@@ -713,9 +710,14 @@ pre.editor-colors .fold-marker:after {
 <p>5. <a href="#toc_five">Comparing model output and recorded data</a></p>
 <p>6. <a href="#toc_six">Adjusting parameters</a></p>
 <p>7. <a href="#toc_seven">Have fun exploring your own data!</a></p>
+<!-- -->
+<!-- -->
+<!-- the above lines of text have been reviewed -->
+<!-- -->
+<!-- -->
 <p><a id="toc_one"></a></p>
 <h2>1. Simulating Rhythmic Proximal Inputs: Alpha Only</h2>
-<p>Note that before running/loading new simulations, we first remove the prior simulation(s) by pressing the “Remove Simulation” button at the bottom of the GUI. If we do not do this, both simulation dipoles are displayed (old simulation with dotted line, new simulation with solid line; see “Tour of the GUI” for more details on simulation control).</p>
+<p>Note that before running/loading new simulations, we first remove the prior simulation(s) by pressing the “Remove Simulation” button at the bottom of the GUI. If we do not do this, both simulation dipoles are displayed (the old simulation is displayed with a dotted line, new simulation with a solid line; see “Tour of the GUI” for more details on simulation controls).</p>
 <h3>1.1 Load/view parameters to define the network structure &amp; to “activate” the network.</h3>
 <p>As described in the “Getting Started” section, low-frequency alpha and beta rhythms can be simulated by a combination of rhythmic subthreshold proximal and distal ~10Hz inputs. Here, we begin by describing the impact of proximal inputs only. An initial parameter set that will simulate the effect of ~10 Hz subthreshold proximal drive is provided in the file <a href="https://www.google.com/url?q=https://hnn.brown.edu/wp-content/uploads/2018/05/AlphaAndBeta.zip&amp;sa=D&amp;ust=1552525363605000">OnlyRhythmicProx.param</a>.</p>
 <p>The template cortical column networks structure for this simulation is described in the <a href="https://www.google.com/url?q=https://hnn.brown.edu/index.php/overview-uniqueness/&amp;sa=D&amp;ust=1552525363605000">Overview</a>and <a href="https://www.google.com/url?q=https://hnn.brown.edu/index.php/under-the-hood/&amp;sa=D&amp;ust=1552525363605000">Under the Hood</a>&nbsp;sections. Several of the network parameter can be adjusted via the HNN GUI (e.g. local excitatory and inhibitory connection strengths), but we will leave them fixed for this tutorial and only adjust the inputs the “activate” the network.</p>
@@ -725,28 +727,44 @@ pre.editor-colors .fold-marker:after {
 <p>To view the parameters that “activate” the network via rhythmic proximal input, click:</p>
 <p>Set Parameters &gt; Rhythmic Proximal Inputs</p>
 <p>You should see the values of adjustable parameters displayed as in the dialog boxes below. There are 3 tabs, one regulating the timing statistics of the driving input, one regulating the post-synaptic conductances onto the Layer 2/3neurons, and one regulating the post-synaptic conductances onto the Layer 5 neurons. We describe adjustable parameters in each dialog box&nbsp;separately.</p>
-<table class="c21">
-<tbody>
-<tr class="c33">
-<td class="c30" colspan="1" rowspan="1">
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png" alt=""></p>
+<!-- start Figure 4 -->
+<div style="background-color:rgba(0, 0, 0, 0.025); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:20px">
+<br><strong> Figure 4 </strong><table class="gist_table" style="border-collapse: collapse; border: none;">
+<tbody><tr style="border: none;">
+
+</tr>
+<tr style="border: none;">
+<td style="border: none;" width="30%">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png" alt="image11" width="100%/">
+</a>
+<p>  </p>
 </td>
-<td class="c30" colspan="1" rowspan="1">
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image18.png" alt=""></p>
+<td style="border: none;" width="30%">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image18.png" alt="image18" width="100%/">
+</a>
+<p>  </p>
 </td>
-<td class="c30" colspan="1" rowspan="1">
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image32.png" alt=""></p>
+<td style="border: none;" width="30%">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image32.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image32.png" alt="image32" width="100%/">
+</a>
+<p>  </p>
 </td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
+</div>
+<!-- end Figure 4 -->
 <p>Timing tab: The rhythmic proximal inputs drive excitatory synapses in the neocortical network in a proximal projection pattern, as shown at the bottom of the dialog box. For further details on the connectivity structure of the network, see the Under the Hoodsection of the HNN website. Rhythmic proximal input occurs through stochastic, presynaptic bursts of action potentials from a population of bursting cells (set with “Number bursts”; see Figure 3) onto postsynaptic neurons of the modelled network. Stochasticity is introduced in two places: the spike train start time for each bursting cell is sampled from a normal distribution with mean “Start time mean (ms)” and standard deviation “Start time stdev (ms)” and the inter-burst intervals for each bursting cell are sampled from a normal distribution of mean <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image1.png" alt="">(e.g., a 100 ms inter-burst interval corresponds to a “Burst frequency” of 10 Hz) and standard deviation “Burst stdev (ms)” (see Figure 3). Also note that the number of spikes per burst unit is set with “Spikes/burst” (currently, only values of 1 and 2 with a fixed 10ms delay can be used) and the final stop time for the entire population of rhythmic proximal inputs is set with “Stop time (ms)”.</p>
 <p>Layer 2/3, and Layer 5 tabs: This dialog boxallows you to set the postsynaptic conductance of each of the excitatory synapses in the networks. There are AMPA and NMDA receptors on each cell type (pyramidal and basket cells). There is also a delay parameter to control the arrival time of each spike to the network. In this example, the delay to the layer 2/3 cells is 0.1 ms, with a slightly longer delay to the layer 5 cells of 1 ms. For further details on the connectivity structure of the network, see Under the Hood.</p>
 <h3>1.2 Run the simulation and visualize net current dipole</h3>
 <p>To run this simulation, navigate to the main GUI window and click:</p>
 <p>Start Simulation</p>
 <p>This simulation runs for 700 ms of simulation time, so will take a little longer to run than the ERP simulations. Once completed, you will see output similar to that shown below.</p>
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image25.png" alt=""></p>
+<!-- start Figure 5 -->
+<div style="background-color:rgba(0, 0, 0, 0.025); text-align:center; vertical-align: middle; padding:15px; margin-top:20px; margin-bottom:20px">
+<p><strong>Figure 5</strong></p>
+<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image25.png" alt="image25" width="90%/"></a></p>
+</div>
+<!-- end Figure 5 -->
 <p>As shown in the red histogram in the top panel of the HNN GUI above, with this parameter set, a burst of proximal input spikes is provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs (controlled by the start time stdev and Burst stdev parameters, there is some variability in the histogram of proximal input times. Note that a decrease in the Burst stdev would create shorter duration bursts (i.e., more synchronous bursts); this will be explored further in step 6.1 below.</p>
 <p>The ~10 Hz bursts of proximal drive induces current flow up the pyramidal neuron dendrites increasing the signal above the 0 nAm baseline, which then relaxes back to zero, approximately every 100 ms. This is observed in the black current dipole waveform in the GUI window. The middle panel shows the corresponding time-frequency spectrogram for this waveform that exhibits a high-power continuous 10 Hz signal. Importantly, in this example the strength of the proximal input was titrated to be subthreshold (i.e., cells do not spike) under the assumption that macroscale oscillations are generated primarily by subthreshold current flow across large populations of synchronous pyramidal neurons. In step 6.2&nbsp;below, we explore differences in the signal when the cells are driven to spike (see also ERP tutorial).</p>
 <p>While this exploration with proximal drive is only useful in understanding how subthreshold rhythmic inputs impact the current dipole produced by the circuit, several features of the waveform and spectrogram of the signal do not match the recorded data shown in Figures 1and 2. Next, we explore the impact of rhythmic distal inputs only (step 2), and then a combination of the two (step 3).</p>
@@ -762,27 +780,42 @@ pre.editor-colors .fold-marker:after {
 <p>To view the new parameters that “activate” the network via rhythmic distal input, click:</p>
 <p>Set Parameters&gt; Rhythmic Distal Inputs</p>
 <p>You should see the values of adjustable parameters displayed as &nbsp;in the dialog boxes below. Notice that these parameters are the same as those regulating the proximal drive in step (1). However, in this case the parameters define bursts of synaptic inputs that drive the network in a distal project pattern, shown schematically at the bottom of the dialog box.</p>
-<p><a id="t.4ddb8f843d82ffd23098bf8aea89b4b1c103b929"></a><a id="t.2"></a></p>
-<table class="c43">
-<tbody>
-<tr class="c33">
-<td class="c30" colspan="1" rowspan="1">
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png" alt=""></p>
+<!-- start Figure 6 -->
+<div style="background-color:rgba(0, 0, 0, 0.025); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:20px">
+<br><strong> Figure 6 </strong><table class="gist_table" style="border-collapse: collapse; border: none;">
+<tbody><tr style="border: none;">
+
+</tr>
+<tr style="border: none;">
+<td style="border: none;" width="30%">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png" alt="image6" width="100%/">
+</a>
+<p>  </p>
 </td>
-<td class="c30" colspan="1" rowspan="1">
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image22.png" alt=""></p>
+<td style="border: none;" width="30%">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image22.png" alt="image22" width="100%/">
+</a>
+<p>  </p>
 </td>
-<td class="c30" colspan="1" rowspan="1">
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image5.png" alt=""></p>
+<td style="border: none;" width="30%">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image5.png" alt="image5" width="100%/">
+</a>
+<p>  </p>
 </td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
+</div>
+<!-- end Figure 6 -->
 <h3>2.2 Run the simulation and visualize net current dipole</h3>
 <p>To run this simulation, navigate to the main GUI window and click:</p>
 <p>Start Simulation</p>
 <p>Once completed, you will see output in the GUI window similar to that shown below.</p>
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image7.png" alt=""></p>
+<!-- start Figure 7 -->
+<div style="background-color:rgba(0, 0, 0, 0.025); text-align:center; vertical-align: middle; padding:15px; margin-top:20px; margin-bottom:20px">
+<p><strong>Figure 7</strong></p>
+<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image7.png" alt="image7" width="90%/"></a></p>
+</div>
+<!-- end Figure 7 -->
 <p>As shown in the green histogram in the top panel of the HNN GUI above, with this parameter set, a burst of distal input spikes is provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs (controlled by the start time stdev, and Burst stdev parameters), there is some variability in the histogram of proximal input times. The ~10 Hz bursts of distal input induces current flow down the pyramidal neuron dendrites decreasing the signal below the 0 nAm baseline, which then relaxes back to zero, approximately every 100 ms. This is observed in the black current dipole waveform in the GUI window. The middle panel shows the corresponding time-frequency spectrogram for this waveform that exhibits a high power continuous 10 Hz signal. Importantly, in this example the strength of the distal input was also titrated to be subthreshold (i.e., cells do not spike) under the assumption that macroscale oscillations are generated primarily by subthreshold current flow across large populations of synchronous pyramidal neurons.</p>
 <p>While instructional, this simulation also does not produce waveform and spectral features that match the experimental data in Figures 1&nbsp;and&nbsp;2. In the next step (step 3), we describe how combining both the 10 Hz proximal and distal drives can produce an oscillation with many characteristic features of the spontaneous SI signal (Jones et al 2009).</p>
 <p><a id="toc_three"></a></p>
@@ -794,28 +827,41 @@ pre.editor-colors .fold-marker:after {
 <p>Set Parameters From File</p>
 <p>Then select the file <a href="https://www.google.com/url?q=https://hnn.brown.edu/wp-content/uploads/2018/05/AlphaAndBeta.zip&amp;sa=D&amp;ust=1552525363620000">AlphaAndBeta.param</a>&nbsp;from HNN’s param subfolder or from your local machine.</p>
 <p>To view the new parameters that “activate” the network via both rhythmic proximal and rhythmic distal input, click:</p>
-<p>Set Parameters&gt; Rhythmic Proximal Inputs</p>
-<p>Set Parameters&gt; Rhythmic Distal Inputs</p>
+<p>Set Parameters &gt; Rhythmic Proximal Inputs</p>
+<p>Set Parameters &gt; Rhythmic Distal Inputs</p>
 <p>You should see the values displayed in the dialogue boxes below.</p>
-<p><a id="t.f727949b760321cc972232d42b2d9fa1f8785d82"></a><a id="t.3"></a></p>
-<table class="c21">
-<tbody>
-<tr class="c33">
-<td class="c29" colspan="1" rowspan="1">
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png" alt=""></p>
+<!-- start Figure 8 -->
+<div style="background-color:rgba(0, 0, 0, 0.025); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:20px">
+<br><strong> Figure 8 </strong><table class="gist_table" style="border-collapse: collapse; border: none;">
+<tbody><tr style="border: none;">
+
+</tr>
+<tr style="border: none;">
+<td style="border: none;" width="50%">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png" alt="image11" width="100%/">
+</a>
+<p>  </p>
 </td>
-<td class="c29" colspan="1" rowspan="1">
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png" alt=""></p>
+<td style="border: none;" width="50%">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png" alt="image6" width="100%/">
+</a>
+<p>  </p>
 </td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
+</div>
+<!-- end Figure 8 -->
 <p>In this simulation, the Start time mean (ms) values for both proximal and distal inputs are set to 50.0 ms, and all other parameters are the same. Note that the synaptic weights are the same as used in the previous two simulations (not shown in dialog boxes above, click on Layer 2/3 and Layer 5 to see them). The equal start time implies that the proximal and distal input bursts will arrive nearly synchronously to the network on each cycle of the 10 Hz input. Due to the stochasticity in the parameters (start time stdev, and Burst stdev) sometimes the bursts will arrive together and sometimes there will be a slight delay. As will be described further below, this stochasticity creates intermittent alpha and beta events.</p>
 <h3>3.2 Run the simulation and visualize net current dipole</h3>
 <p>To run this simulation, navigate to the main GUI window and click:</p>
 <p>Start Simulation</p>
 <p>Once completed, you will see output similar to that shown below.</p>
-<p><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image28.png" alt=""></p>
+<!-- start Figure 9 -->
+<div style="background-color:rgba(0, 0, 0, 0.025); text-align:center; vertical-align: middle; padding:15px; margin-top:20px; margin-bottom:20px">
+<p><strong>Figure 9</strong></p>
+<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image28.png" alt="image28" width="90%/"></a></p>
+</div>
+<!-- end Figure 9 -->
 <p>As shown in the green and red histogram in the top panel of the HNN GUI above, with this parameter set, bursts of both proximal and distal input spikes are provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs, there is some variability in the timing and duration of the input bursts such that sometimes they arrive at the same time and sometimes there is a slight offset between them. As a result, intermittent transient alpha and beta &nbsp;events emerge in the time-frequency spectrogram. Alpha events are produced when the inputs occur slightly out of phase and current flow is pushed alternately up and down the dendrites for ~50 ms duration each (set by the length of the bursts inputs). Beta events occur when the burst inputs arrive more synchronously and the upward current flow is disrupted by downward current flow for ~50 ms to effectively cut the oscillation period in half. As such, the relative alpha to beta expression can be controlled by the delay between the inputs and their relative burst strengths. We will detail this further below (see step 6 below).</p>
 <p>In contrast to the results from only proximal or distal input,&nbsp;since the current in the pyramidal neurons is pushed&nbsp;both upward and downward in this simulation, the current dipole signal oscillates above and below 0 nAm, which qualitatively matches the experimental data (see Figures 1 and 2 in “Getting Started”). &nbsp; Additionally, this simulation reproduces the transient nature of the alpha and beta activity and several other features of the waveform and spectrogram can be quantified to show close agreement between model and experimental results (see Figure 2 above, and Jones et al. 2009[1], for further details).</p>
 <p>We note that here we do not directly compare the spontaneous current dipole waveform to recorded data, as was done in the ERP tutorial with a root mean squared error. This is due to the fact that the spontaneous SI signal we are simulating is not time locked to &nbsp;alpha or beta events on any given trial, and the stochastic nature of the driving inputs causes variability in the timing of the alpha or beta activity, making it difficult to align recorded data and simulated results. However, a direct comparison can be made between time averaged recorded and simulated signals by comparing power spectral density waveforms. An example of comparison is shown in step 5 below.</p>
@@ -1014,6 +1060,6 @@ View&gt; View PSD</p>
 <p>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&amp;sa=D&amp;ust=1552525363663000">Hughes, S. W. &amp; Crunelli, V. Thalamic mechanisms of EEG alpha rhythms and their pathological implications.</a> <a href="https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&amp;sa=D&amp;ust=1552525363663000">Neuroscientist</a><a href="https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&amp;sa=D&amp;ust=1552525363663000">&nbsp;</a><a href="https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&amp;sa=D&amp;ust=1552525363663000">11,</a><a href="https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&amp;sa=D&amp;ust=1552525363663000">&nbsp;357–372 (2005).</a></p>
 <div>
 </div>
-
+</div>
   </body>
 </html>
