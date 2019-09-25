@@ -2,7 +2,7 @@
 <html data-markdown-preview-plus-context="html-export">
   <head>
     <meta charset="utf-8" />
-    <title>test5-v11</title>
+    <title>test5-v12</title>
     
 <!-- start stylesheet -->
     <style>.emoji {
@@ -715,7 +715,7 @@ html[data-markdown-preview-plus-context="html-export"] #wrapper {
     position:absolute;
     width:100%;
     height:100%;
-    text-align: center; /*handles the horizontal centering*/
+    text-align: center;
 }
       
 /*handles the vertical centering*/
@@ -723,6 +723,11 @@ html[data-markdown-preview-plus-context="html-export"] #wrapper {
 {
     display: inline-block;
     height: 100%;
+    vertical-align: middle;
+}
+.Centered
+{
+    display: inline-block;
     vertical-align: middle;
 }
 
@@ -736,7 +741,9 @@ html[data-markdown-preview-plus-context="html-export"] #wrapper {
 
 <div class="headercontainer">
 <div id="over">
-    <img class="Centered" style="width:100%" src="https://hnn.brown.edu/wp-content/uploads/2018/05/redeegbg2KH.jpg" />
+  <span class="Centerer">
+    <img class="Centered" style="width:100%; height:100%;" src="https://hnn.brown.edu/wp-content/uploads/2018/05/redeegbg2KH.jpg" />
+  </span>
 </div>
   <!-- <img class="headerimage" src="https://hnn.brown.edu/wp-content/uploads/2018/05/redeegbg2KH.jpg" style="width:100%;"> -->
   <div class="headertext">Alpha and Beta</div>
