@@ -2,7 +2,7 @@
 <html data-markdown-preview-plus-context="html-export">
   <head>
     <meta charset="utf-8" />
-    <title>test5-v06</title>
+    <title>test5-v07</title>
     
 <!-- start stylesheet -->
     <style>.emoji {
@@ -691,18 +691,17 @@ html[data-markdown-preview-plus-context="html-export"] #wrapper {
 /* header container */
 .headercontainer {
   display: flex;
-  overvlow: hidden;
   position: relative;
-  text-align: center;
+  height: 300px;
   vertical-align: middle;
   font-family: sans-serif;
   font-size: 2.4em;
   font-weight: 500;
+  text-align: center;
   color: #FFFFFF;
-  height: 300px;
 }
 
-/* centered text */
+/* header text */
 .headertext {
   position: absolute;
   color: #FFFFFF;
@@ -710,12 +709,8 @@ html[data-markdown-preview-plus-context="html-export"] #wrapper {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+      
 
-.headerimage {
-  position: relative;
-  width: 100%;
-  overvlow: hidden;
-}
 
 </style>
 
@@ -726,7 +721,11 @@ html[data-markdown-preview-plus-context="html-export"] #wrapper {
   <body>
 
 <div class="headercontainer">
-  <img class="headerimage" src="https://hnn.brown.edu/wp-content/uploads/2018/05/redeegbg2KH.jpg" alt="header" style="width:100%;">
+<div id="over">
+    <span class="Centerer"></span>
+    <img class="Centered" style="width:100%" src="https://hnn.brown.edu/wp-content/uploads/2018/05/redeegbg2KH.jpg" />
+</div>
+  <!-- <img class="headerimage" src="https://hnn.brown.edu/wp-content/uploads/2018/05/redeegbg2KH.jpg" style="width:100%;"> -->
   <div class="headertext">Alpha and Beta</div>
 </div>
     
