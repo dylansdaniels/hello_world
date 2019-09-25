@@ -2,7 +2,7 @@
 <html data-markdown-preview-plus-context="html-export">
   <head>
     <meta charset="utf-8" />
-    <title>test5-v02</title>
+    <title>test5-v03</title>
     
 <!-- start stylesheet -->
     <style>.emoji {
@@ -686,43 +686,16 @@ html[data-markdown-preview-plus-context="html-export"] #wrapper {
     width: 100%;
     height: 100%;
 }
-      
+
+/* header container */
 .headercontainer {
   position: relative;
   text-align: center;
   color: white;
 }
 
-/* Bottom left text */
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-}
-
-/* Top left text */
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-}
-
-/* Top right text */
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-}
-
-/* Bottom right text */
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-}
-
-/* Centered text */
-.centered {
+/* centered text */
+.headertext {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -744,15 +717,12 @@ html[data-markdown-preview-plus-context="html-export"] #wrapper {
   <body>
     
 <div class="headercontainer">
-  <img src="https://hnn.brown.edu/wp-content/uploads/2018/05/redeegbg2KH.jpg" alt="header" style="width:100%;">
-  <div class="bottom-left">Bottom Left</div>
-  <div class="top-left">Top Left</div>
-  <div class="top-right">Top Right</div>
-  <div class="bottom-right">Bottom Right</div>
-  <div class="centered">Centered</div>
+  <img src="https://hnn.brown.edu/wp-content/uploads/2018/05/redeegbg2KH.jpg" alt="header" style="width:100%; height:"200px;">
+  <div class="headertext"><h1>Centered</h1></div>
 </div>
     
     <div id="wrapper">
+                     
 <!-- added -->
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
