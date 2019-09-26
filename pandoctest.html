@@ -1,13 +1,68 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
 <title>
-Tutorials - HNN
+v03 - Tutorials - HNN
 </title>
-<link rel = "stylesheet" type = "text/css" href = "stylesheet.css" />
+<link rel = "stylesheet"
+type = "text/css"
+href = "stylesheet.css" />
 </head>
 <body>
+<div class="headercontainer">
+<div class="headertext">
+Alpha and Beta
+</div>
+</div>
+<div id="wrapper">
+
+<!-- added -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+Top
+</button>
+<script>
+//Get the button:
+mybutton = document.getElementById("myBtn");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+<!-- end added -->
+<!-- return to tutorials -->
+<div style="text-align:center; vertical-align: middle; padding:10px;">
+<p>
+</p>
+<tbody>
+<tr style="border: none;">
+<td style="border: none; width: 33.3%; padding: 1px;">
+</td>
+<td style="border: none; width: 33.3%; padding: 1px;">
+<a style="text-decoration: none" href="https://hnn.brown.edu/index.php/tutorials/">
+<p>
+<img src="https://hnn.brown.edu/wp-content/uploads/2019/06/Model_PN.png" width="60" height="auto">
+</p>
+<p style=" font-family: sans-serif; font-size: x-large; font-weight:700; color: #474095; border:0px; margin:0px;">
+Return to Tutorials
+</p>
+</a>
+</td>
+<td style="border: none; width: 33.3%; padding: 1px;">
+</td>
+</tr>
+</tbody>
+</div>
+<!-- end return to tutorials-->
 <h1 id="alpha-7-14-hz-and-beta-15-29-hz-rhythms-the-mu-complex">Alpha (7-14 Hz) and Beta (15-29 Hz) Rhythms: The Mu-Complex</h1>
 <h2 id="getting-started">Getting Started</h2>
 <p>In order to understand the workflow and initial parameter sets provided with this tutorial, we must first briefly describe prior studies that led to the creation of the data you will aim to simulate. This tutorial is based on results from Jones et al. 2009 where, using MEG, we recorded spontaneous (pre-stimulus) alpha (7-14 Hz) and beta (15-20 Hz) rhythms that arise as part of the mu-complex from the primary somatosensory cortex (S1) [1]. (Figure 1. See also [2-4].)</p>
@@ -31,28 +86,3 @@ Tutorials - HNN
 <p>Key features of the spontaneous non-average SI alpha/beta complex include, intermittent transient bouts of alpha/beta activity, a waveform that oscillates around 0nAm, PSD with peaks in the alpha and beta bands, primarily non-overlapping alpha and beta events, and a symmetric waveform oscillation. The model was able to reproduce each of these features.</p>
 </div>
 <!-- end Figure 2 -->
-<!-- start Figure 3 -->
-<div style="background-color:rgba(0, 0, 0, 0.025); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:20px">
-
-<table class="gist_table" style="border-collapse: collapse; border: none;">
-<tr style="border: none;">
-<br><strong> Figure 3 </strong>
-</tr>
-<tr style="border: none;">
-<td style="border: none;" width="5%"/>
-<td style="border: none;" width="35%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image4.png"> <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image4.png" alt="image4" width=100%/> </a>
-<p>
-</p>
-</td>
-<td style="border: none; vertical-align: top;" width="55%">
-<p>
-Schematic illustration of exogenous 10 Hz burst drive through proximal and distal projection pathways.  “Population bursts”, consisting of a set number of “burst units” (10, 2-spike bursts shown) drive post-synaptic conductances in the local network with a set frequency (100 ms ISI) and mean delay between proximal and distal.
-</p>
-</td>
-<td style="border: none;" width="5%"/>
-</tr>
-</table>
-</div>
-<!-- end Figure 3 -->
-</body>
