@@ -1,4 +1,4 @@
-emoji {
+.emoji {
   max-width: 1em !important;
 }
 del {
@@ -628,7 +628,7 @@ pre.editor-colors .fold-marker:after {
 .syntax--source.syntax--python .syntax--variable.syntax--parameter {
   color: #986801;
 }
-html[data-markdown-preview-plus-context="html-export"] #wrapper {
+#wrapper {
   margin: 0 auto;
   width: 900px;
 }
